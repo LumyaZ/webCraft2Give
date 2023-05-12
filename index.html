@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Graft2Give</title>
+        <meta name="description" content="Site vitrine de la marque Free Gaming">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.1.1/model-viewer.min.js"></script>    </head>
+    <body>
+        <div class="container">
+            <div class="overlay"></div>
+            <div class="first_asset">
+                <img src="images/minecraft.jpg"  href="home.html" alt="background">
+            </div>
+            <img src="images/logo_craft2give.png" alt="logo" class="logo">
+            <div class="logo-container">
+                <div class="social-icons">
+                    <a href="https://www.twitch.tv"><img src="images/twitch_logo.png" alt="Twitch logo" class="twitch_logo"></a>
+                    <a href="https://twitter.com"><img src="images/twitter_logo.png" alt="Twitter logo" class="twitter_logo"></a>
+                </div>
+                <p>Texte présentation</p>
+            </div>
+            <div class="header">
+                <nav>
+                    <div class="nav-container">
+                        <ul>
+                          <li><a href="#sectionPresentation">Présentation</a></li>
+                          <li><a href="#sectionExplication">Explication</a></li>
+                          <li><a href="#sectionTeam">Team</a></li>
+                        </ul>
+                      </div>
+                </nav>
+            </div>
+
+            <section id="sectionPresentation">
+                <div style="display: flex;">
+                    <div class="blue-background">
+                        <div class="title_one">Craft2Give c'est quoi ?</div>
+                        <div class="txt_one">
+                            <span>Craft2Give est un événement caritatif diffusé en direct sur la plateforme de streaming Twitch, qui offre aux spectateurs l'opportunité d'influencer et d'interagir directement avec les streamers en faisant des dons via la plateforme. Les dons peuvent être effectués en utilisant des bits et des points de chaîne Twitch.</span> 
+                        </div>
+                    </div>
+                    <div class="right-column">
+                        <div class="col_right col-1-right">
+                            <span style="margin:0"><model-viewer alt="Twitch Logo" src="model_3d/twitch_logo.glb" ar shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer></span>
+                        </div>
+                        <div class="col_right col-2-right"><div class="sketchfab-embed-wrapper"> <iframe title="Twitch Logo" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/e9d2e09d5af7468ba70ab7d978af5671/embed"> </iframe> <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;"></div></div>
+                        <div class="col_right col-3-right"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="sectionExplication">
+                <div style="display: flex;">
+                <div class="red-background">
+                    <div class="title_deux">Craft2Give comment ça marche ?</div>
+                    <div class="txt_deux">
+                        <span>Pour le fonctionnement du projet, on lie l'extraction de données sur Twitch pour récupérer les informations des dons envoyées et l'utilisation d'une Api pour générer des événement Minecraft.</span> 
+                    </div>
+                </div>
+                <div class="left-column">
+                        <div class="col_left col-1-left ">
+                            <span style="margin:0">Ceci est la colonne de gauche</span>
+                        </div>
+                        <div class="col_left col-2-left"></div>
+                    </div>
+                </div>
+            </section>
+            <section id="sectionTeam">
+                <div class="team">
+                    <span class="title">Team</span><br><br><br><br>
+                    <div class="team_bloc">
+                        <div>
+                            <div class="member">
+                                <span class="bloc"><img src="images/tete_king.png" alt="king" class="avatar"></span>
+                                <span class="name">Alexis Neri</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="member">
+                                <span class="bloc"><img src="images/tete_creeper.png" alt="creeper" class="avatar"></span>
+                                <span class="name">Thomas Cornu</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="member">
+                                <span class="bloc"><img src="images/tete_sheep.png" alt="sheep" class="avatar"></span>
+                                <span class="name">Antoine Raimand</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="member">
+                                <span class="bloc"><img src="images/tete_steve.png" alt="steve" class="avatar"></span>
+                                <span class="name">Axel Carry</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="member">
+                                <span class="bloc"><img src="images/tete_sheep.png" alt="zombie" class="avatar"></span>
+                                <span class="name">Ngouandji Grecia</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </body>
+</html>
+
+<script>
+    $(document).ready(function() {
+        var header = $('.header');
+        var first_asset = $('.first_asset');
+        var height = first_asset.height();
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > height) {
+                header.addClass('fixed');
+            } else {
+                header.removeClass('fixed');
+            }
+        });
+    });
+
+
+    function isElementInView(el) {
+    const rect = el.getBoundingClientRect();
+    return (rect.top >= 0 && rect.bottom <= window.innerHeight);
+  }
+
+  function handleScroll() {
+    const titleOne = document.querySelector('.title_one');
+    const txtOne = document.querySelector('.txt_one');
+
+    const titleDeux= document.querySelector('.title_deux');
+    const txtDeux = document.querySelector('.txt_deux');
+
+    if (isElementInView(titleOne) && isElementInView(txtOne)) {
+        titleOne.classList.add('in-view');
+        txtOne.classList.add('in-view');
+    } else {
+        titleOne.classList.remove('in-view');
+        txtOne.classList.remove('in-view');
+    }
+
+    if (isElementInView(titleDeux) && isElementInView(txtDeux)) {
+        titleDeux.classList.add('in-view');
+        txtDeux.classList.add('in-view');
+    } else {
+        titleDeux.classList.remove('in-view');
+        txtDeux.classList.remove('in-view');
+    }
+  }
+
+  window.addEventListener('scroll', handleScroll);
+
+</script>
